@@ -1,0 +1,16 @@
+<div>
+  <input type="checkbox"
+         class="todo-checkbox"
+         (click)="completeItem()" />
+            <span class="in2"  [ngClass]= "{'show' : item.show}">
+                <input [value]="item.title"
+                #inputElementRef/>
+                <button class="btn btn-green" (click)="updateItemSave(inputElementRef.value)">
+                    save
+                  </button></span>
+             <span class="todo-title"  (click)="changeVis()" [ngClass]="{'todo-complete': item.completed ,'in2': item.show ,'show':!item.show}">
+              {{ item.title }}</span>
+<button class="btn btn-red" (click)="removeItem()">
+    remove
+  </button>
+</div>
